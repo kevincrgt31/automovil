@@ -19,4 +19,14 @@ public class AutomovilController {
     public List<Automovil> devolverAutos() {
         return automovilRepository.findAll();
     }
+    
+    @GetMapping("/insertar")
+public String insertarAutos() {
+
+    automovilRepository.save(new Automovil(null, "Toyota", "Corolla", 2020));
+    automovilRepository.save(new Automovil(null, "Honda", "Civic", 2021));
+    automovilRepository.save(new Automovil(null, "Mazda", "3", 2022));
+
+    return "Datos insertados";
+}
 }
